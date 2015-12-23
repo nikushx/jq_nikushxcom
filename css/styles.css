@@ -1,0 +1,127 @@
+body {
+    
+    overflow: hidden;
+    font-family: 'Lato', sans-serif;
+        
+}
+    
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    background: #FFF;
+    background-size: cover !important;
+    
+    background-image: url(../img/bg.jpg);
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+}
+
+.initialBox {
+    
+    position: absolute;
+
+    height: 200px;
+    width: 300px;
+    top: 50%;
+    left: -25%;
+    margin: -100px 0 0 -150px;
+    
+}
+
+.boxBackground {
+    
+    position: relative;
+    background-color: lightgray;
+    height: 200px;
+    width: 300px;
+    box-shadow: 0px 2px 15px black;
+    z-index: -1;
+    
+}
+
+.boxContent {
+    
+    position: relative;
+    height: 180px;
+    width: 280px;
+    top: -100%;
+    margin: 10px 10px 10px 10px;
+    
+}
+
+.center {
+    
+    display: block;
+    margin: auto;
+    
+}
+
+.enter {
+    
+    color: darkslategray;
+    font-size: 75px;
+    position: relative;
+    top: -7%
+    
+}
+
+.welcomeBox {
+    
+    position: absolute;
+    height: 600px;
+    width: 440px;
+    top: 50%;
+    left: -25%;
+    margin: -300px 0 0 -220px;
+    
+}
+
+.welcomeBackground {
+    
+    position: relative;
+    background-color: lightsteelblue;
+    height: 600px;
+    width: 440px;
+    box-shadow: 0px 2px 15px black;
+    z-index: -1;
+    
+}
+
+.welcomeMenu {
+    
+    display: block;
+    position: relative;
+    top: -100%;
+    
+}
+
+.welcomeMenu h2 {
+    
+    display: inline-block;
+    font-family: "Lato", sans-serif;
+    font-size: 0.3em;
+    position: absolute;
+    width: 1000px;
+    top:  0.4655em;
+    left: 5.7em;
+    
+    
+}
+
+.welcomeMenu .fa {
+    
+    font-size: 7em;
+    position: relative;
+    top: 0.3em;
+    left: 0.1em
+    
+}
+
+.list-group-item {
+    line-height: 178px;
+}
