@@ -10,7 +10,7 @@ var main = function () {
                 
         $('.initialBox').animate({
             
-            left: '125%'
+            left: '225%'
             
         }, 200);
         
@@ -26,7 +26,13 @@ var main = function () {
         
         $('.welcomeBox').animate({
             
-            left: '125%'
+            left: '225%'
+            
+        }, 200);
+        
+        $('.aboutBox').animate({
+            
+            left: '50%'
             
         }, 200);
         
@@ -36,7 +42,13 @@ var main = function () {
         
         $('.welcomeBox').animate({
             
-            left: '125%'
+            left: '225%'
+            
+        }, 200);
+        
+        $('.expBox').animate({
+            
+            left: '50%'
             
         }, 200);
         
@@ -46,7 +58,13 @@ var main = function () {
         
         $('.welcomeBox').animate({
             
-            left: '125%'
+            left: '225%'
+            
+        }, 200);
+        
+        $('.contactBox').animate({
+            
+            left: '50%'
             
         }, 200);
         

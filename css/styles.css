@@ -16,7 +16,8 @@ body {
     background: #FFF;
     background-size: cover !important;
     
-    background-image: url(../img/bg.jpg);
+    background-image: url(../img/bg1.jpg);
+    background-position: bottom;
     -webkit-filter: blur(2px);
     filter: blur(2px);
 }
@@ -28,7 +29,7 @@ body {
     height: 200px;
     width: 300px;
     top: 50%;
-    left: -25%;
+    left: -125%;
     margin: -100px 0 0 -150px;
     
 }
@@ -76,7 +77,7 @@ body {
     height: 600px;
     width: 440px;
     top: 50%;
-    left: -25%;
+    left: -125%;
     margin: -300px 0 0 -220px;
     
 }
@@ -124,4 +125,83 @@ body {
 
 .list-group-item {
     line-height: 178px;
+}
+
+.aboutBox {
+    
+    position: absolute;
+    height: 688px;
+    width: 500px;
+    top: 50%;
+    left: -125%;
+    margin: -344px 0 0 -220px;
+    
+}
+
+.aboutBackground {
+    
+    position: relative;
+    background-image: url(../img/bg_3.png);
+    
+    height: 688px;
+    width: 500px;
+    box-shadow: 0px 2px 15px black;
+    z-index: -1;
+    
+}
+
+.aboutBody {
+    
+    
+    
+}
+
+.aboutSkills {
+    
+    
+    
+}
+
+.expBox {
+    
+    position: absolute;
+    height: 688px;
+    width: 500px;
+    top: 50%;
+    left: -125%;
+    margin: -344px 0 0 -220px;
+    
+}
+
+.expBackground {
+    
+    position: relative;
+    background-image: url(../img/bg_2.png);
+    height: 688px;
+    width: 500px;
+    box-shadow: 0px 2px 15px black;
+    z-index: -1;
+    
+}
+
+.contactBox {
+    
+    position: absolute;
+    height: 688px;
+    width: 500px;
+    top: 50%;
+    left: -125%;
+    margin: -344px 0 0 -220px;
+    
+}
+
+.contactBackground {
+    
+    position: relative;
+    background-image: url(../img/bg_1.jpg);
+    height: 688px;
+    width: 500px;
+    box-shadow: 0px 2px 15px black;
+    z-index: -1;
+    
 }
