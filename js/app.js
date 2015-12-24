@@ -1,5 +1,7 @@
 var main = function () {
     
+    var fadeSpeed = 400;
+    
     $('.returnArrow').hide();
     $('.initialBox').hide();
     $('.initialBox').fadeIn(1000);
@@ -10,13 +12,13 @@ var main = function () {
             
             left: '225%'
             
-        }, 200);
+        }, fadeSpeed);
         
         $('.welcomeBox').animate({
             
             left: '50%'
             
-        }, 200);
+        }, fadeSpeed);
         
     });
     
@@ -32,13 +34,13 @@ var main = function () {
             
             left: '225%'
             
-        }, 200);
+        }, fadeSpeed);
         
         $('.aboutBox').animate({
             
             left: '50%'
             
-        }, 200);
+        }, fadeSpeed);
         
     });
     
@@ -52,13 +54,13 @@ var main = function () {
             
             left: '225%'
             
-        }, 200);
+        }, fadeSpeed);
         
         $('.expBox').animate({
             
             left: '50%'
             
-        }, 200);
+        }, fadeSpeed);
         
     });
     
@@ -72,13 +74,13 @@ var main = function () {
             
             left: '225%'
             
-        }, 200);
+        }, fadeSpeed);
         
         $('.contactBox').animate({
             
             left: '50%'
             
-        }, 200);
+        }, fadeSpeed);
         
     });
     
@@ -93,13 +95,13 @@ var main = function () {
             
                 left: '50%'
             
-            }, 200);
+            }, fadeSpeed);
         
             $('.aboutBox').animate({
             
                 left: '-125%'
             
-            }, 200);
+            }, fadeSpeed);
            
         } else if (currentOption === 2) {
            
@@ -107,13 +109,13 @@ var main = function () {
             
                 left: '50%'
             
-            }, 200);
+            }, fadeSpeed);
         
             $('.expBox').animate({
             
                 left: '-125%'
             
-            }, 200);
+            }, fadeSpeed);
            
         } else if (currentOption === 3) {
            
@@ -121,13 +123,13 @@ var main = function () {
             
                 left: '50%'
             
-            }, 200);
+            }, fadeSpeed);
         
             $('.contactBox').animate({
             
                 left: '-125%'
             
-            }, 200);
+            }, fadeSpeed);
            
         }
         
