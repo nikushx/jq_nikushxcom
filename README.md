@@ -2,4 +2,4 @@
 - Rebuilt website with Javascript/jQuery
 - Not currently finished, therefore not live.
 
-- Pre-release server test: http://www.nikushx.com/new/
+- Pre-release server test: http://www.nikushx.com/
