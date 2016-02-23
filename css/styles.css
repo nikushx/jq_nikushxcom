@@ -4,14 +4,12 @@
 
 body {
     
-    overflow: hidden;
     font-family: 'Lato', sans-serif;
         
 }
-    
 
 .background {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
@@ -20,323 +18,33 @@ body {
     background: #FFF;
     background-size: cover !important;
     
-    background-image: url(../img/bg1.jpg);
+    background-image: url(../img/bg.jpg);
     background-position: bottom;
     -webkit-filter: blur(2px);
     filter: blur(2px);
 }
 
-.initialBox {
+#resultThing {
     
     position: absolute;
-
-    height: 200px;
-    width: 300px;
-    top: 50%;
-    left: 50%;
-    margin: -100px 0 0 -150px;
+    margin-top: 6em;
     
 }
 
-.boxBackground {
+.glyphicon-leaf {
     
     position: relative;
-    background-color: lightgray;
-    height: 200px;
-    width: 300px;
-    box-shadow: 0px 2px 15px black;
-    z-index: -1;
+    top: -1em;
+    color: green;
     
 }
 
-.boxContent {
+.logoImageHoly {
     
-    position: relative;
-    height: 180px;
-    width: 280px;
-    top: -100%;
-    margin: 10px 10px 10px 10px;
-    
-}
-
-.center {
-    
-    display: block;
-    margin: auto;
-    
-}
-
-.enter {
-    
-    color: darkslategray;
-    font-size: 75px;
-    position: relative;
-    top: -7%;
-    
-}
-
-.welcomeBox {
-    
-    position: absolute;
-    height: 600px;
-    width: 440px;
-    top: 50%;
-    left: -125%;
-    margin: -300px 0 0 -220px;
-    
-}
-
-.welcomeBackground {
-    
-    position: relative;
-    background-color: lightsteelblue;
-    height: 600px;
-    width: 440px;
-    box-shadow: 0px 2px 15px black;
-    z-index: -1;
-    
-}
-
-.welcomeMenu {
-    
-    display: block;
-    position: relative;
-    top: -100%;
-    
-}
-
-.welcomeMenu h2 {
-    
-    display: inline-block;
-    font-family: "Lato", sans-serif;
-    font-size: 0.3em;
-    position: absolute;
-    width: 1000px;
-    top:  0.4655em;
-    left: 5.7em;
-    
-    
-}
-
-.welcomeMenu .fa {
-    
-    font-size: 7em;
-    position: relative;
-    top: 0.3em;
-    left: 0.1em;
-    
-}
-
-.returnArrow {
-
-    position: absolute;
-    font-size: 4em;
-    color: aquamarine;
-    top: 45.5%;
-    left: 97%;
-    
-}
-
-.returnArrow button {
- 
-    background-color: transparent;
-    border: none;
-    outline: none;
-    text-decoration: none;
-    
-}
-
-.returnArrow i {
- 
-    text-shadow: -2px 3px 20px black;
-    
-}
-
-.list-group-item {
-    line-height: 178px;
-}
-
-.aboutBox {
-    
-    position: absolute;
-    height: 688px;
-    width: 500px;
-    top: 50%;
-    left: -125%;
-    margin: -344px 0 0 -220px;
-    
-}
-
-.aboutBackground {
-    
-    position: relative;
-    background-image: url(../img/bg_3.png);
-    
-    height: 688px;
-    width: 500px;
-    box-shadow: 0px 2px 15px black;
-    z-index: -1;
-    
-}
-
-.aboutBody {
-    
-    display: block;
-    position: relative;
-    top: -100%;
-    margin: 10px 10px 10px 20px;
-    line-height: 1.42;
-    
-}
-
-.aboutSkills {
-    
-    display: block;
-    position: relative;
-    top: -100%;
-    margin: 10px 10px 10px 20px;
-    line-height: 0.8;
-    
-}
-
-.expBox {
-    
-    position: absolute;
-    height: 688px;
-    width: 500px;
-    top: 50%;
-    left: -125%;
-    margin: -344px 0 0 -220px;
-    
-}
-
-.expBackground {
-    
-    position: relative;
-    background-image: url(../img/bg_2.png);
-    height: 688px;
-    width: 500px;
-    box-shadow: 0px 2px 15px black;
-    z-index: -1;
-    
-}
-
-.expBody {
- 
-    display: block;
-    position: relative;
-    top: -100%;
-    margin: 10px 10px 10px 20px;
-    
-}
-
-.expBody h2 {
-    
-    border-bottom: 1px solid #000;
-    padding-bottom: 2px;
-    margin-bottom: 20px;
-    
-}
-
-.expBody h4 {
- 
-    padding-bottom: 1em;
-    display: inline;
-    
-}
-
-.expProjects {
-    
-    display: block;
-    position: relative;
-    top: -100%;
-    margin: 10px 10px 10px 20px;
-    
-}
-
-.expProjects h2 {
-    
-    border-bottom: 1px solid #000;
-    padding-bottom: 2px;
-    margin-bottom: 20px;
-    
-}
-
-.expProjects h4 {
- 
-    padding-bottom: 1em;
-    display: inline;
-    
-}
-
-.noDeco {
- 
-    color: inherit;
-    text-decoration: none;
-    
-}
-
-.expProjects a:hover {
-    
-    text-decoration: none;
-    
-}
-
-.rotate {
- 
-    animation: 5s rotate360 infinite linear;
-    
-}
-
-.expText{
- 
-    font-size: 1.3em;
-    position: relative;
-    top: -0.6em;
-    left: 1.0em
-    
-}
-
-.contactBox {
-    
-    position: absolute;
-    height: 550px;
-    width: 550px;
-    top: 50%;
-    left: -125%;
-    margin: -275px 0 0 -275px;
-    z-index: 1;
-    
-}
-
-.contactBackground {
-    
-    position: relative;
-    background-image: url(../img/bg_1.jpg);
-    height: 550px;
-    width: 550px;
-    box-shadow: 0px 2px 15px black;
-    z-index: -1;
-    
-}
-
-.contactBody {
- 
-    display: block;
-    position: relative;
-    top: -100%;
-    margin: 10px 10px 10px 20px;
-    
-}
-
-.contactBody a:hover {
-    
-    text-decoration: none;
-    
-}
-
-.contactBody h4 {
- 
-    padding-bottom: 1em;
+    margin-top: -0.7em;
+    max-width: 100%;
+    height: auto;
+    width: 13%;
+    margin-left: 100%;
     
 }
