@@ -1,120 +1,140 @@
-function printLeaves(n) {
-    
-    var string;
-    if (n == 0) {
-        string = "<span class = 'glyphicon glyphicon-leaf'></span>";
-    }
-    if (n == 1) {
-        string = "<span class = 'glyphicon glyphicon-leaf'></span>";
-    }
-    if (n == 2) {
-        string = "<span class = 'glyphicon glyphicon-leaf'></span><span class = 'glyphicon glyphicon-leaf'></span>";
-    }
-    if (n == 3) {
-        string = "<span class = 'glyphicon glyphicon-leaf'></span><span class = 'glyphicon glyphicon-leaf'></span><span class = 'glyphicon glyphicon-leaf'></span>";
-    }
-    if (n == 4) {
-        string = "<span class = 'glyphicon glyphicon-leaf'></span><span class = 'glyphicon glyphicon-leaf'></span><span class = 'glyphicon glyphicon-leaf'></span><span class = 'glyphicon glyphicon-leaf'></span>";
-    }
-    if (n == 5) {
-        string = "<span class = 'glyphicon glyphicon-leaf'></span><span class = 'glyphicon glyphicon-leaf'></span><span class = 'glyphicon glyphicon-leaf'></span><span class = 'glyphicon glyphicon-leaf'></span><span class = 'glyphicon glyphicon-leaf'></span>";
-    }
-    
-    return string;
-}
-
 var main = function () {
     
-    $('#numba').hide();
+    var fadeSpeed = 400;
     
-    $('#where').keypress(function (e) {
+    $('.returnArrow').hide();
+    $('.initialBox').hide();
+    $('.initialBox').fadeIn(1000);
+    
+    $('.enter').click(function () {
+                
+        $('.initialBox').animate({
+            
+            left: '225%'
+            
+        }, fadeSpeed);
         
-        if (e.which == 13) {
-            $('#where').submit();
-            return false;
-        }
+        $('.welcomeBox').animate({
+            
+            left: '50%'
+            
+        }, fadeSpeed);
         
     });
     
-    var map;
+    var currentOption = 0;
     
-    $('#where').submit(function () {
+    $('#1').click(function () {
+        
+        currentOption = 1;
+        
+        $('.returnArrow').fadeIn(1000);
+        
+        $('.welcomeBox').animate({
+            
+            left: '225%'
+            
+        }, fadeSpeed);
+        
+        $('.aboutBox').animate({
+            
+            left: '50%'
+            
+        }, fadeSpeed);
+        
+    });
     
-        $('#numba').fadeIn();
+    $('#2').click(function () {
         
-        map = new google.maps.Map(document.getElementById('map'));
+        currentOption = 2;
         
-        var searchLocation = "restaurants near " + $('#where').val();
+        $('.returnArrow').fadeIn(1000);
         
-        var request = {
-            query: searchLocation
-        };
+        $('.welcomeBox').animate({
+            
+            left: '225%'
+            
+        }, fadeSpeed);
         
-        service = new google.maps.places.PlacesService(map);
-        service.textSearch(request, callback);
+        $('.expBox').animate({
+            
+            left: '50%'
+            
+        }, fadeSpeed);
+        
+    });
+    
+    $('#3').click(function () {
+        
+        currentOption = 3;
+        
+        $('.returnArrow').fadeIn(1000);
+        
+        $('.welcomeBox').animate({
+            
+            left: '225%'
+            
+        }, fadeSpeed);
+        
+        $('.contactBox').animate({
+            
+            left: '50%'
+            
+        }, fadeSpeed);
+        
+    });
+    
+    // Return Arrow Control
+    $('.returnArrow').click(function () {
+        
+        $('.returnArrow').fadeOut(600);
+        
+        if (currentOption === 1) {
+           
+            $('.welcomeBox').animate({
+            
+                left: '50%'
+            
+            }, fadeSpeed);
+        
+            $('.aboutBox').animate({
+            
+                left: '-125%'
+            
+            }, fadeSpeed);
+           
+        } else if (currentOption === 2) {
+           
+            $('.welcomeBox').animate({
+            
+                left: '50%'
+            
+            }, fadeSpeed);
+        
+            $('.expBox').animate({
+            
+                left: '-125%'
+            
+            }, fadeSpeed);
+           
+        } else if (currentOption === 3) {
+           
+            $('.welcomeBox').animate({
+            
+                left: '50%'
+            
+            }, fadeSpeed);
+        
+            $('.contactBox').animate({
+            
+                left: '-125%'
+            
+            }, fadeSpeed);
+           
+        }
         
     });
     
 };
-
-function callback(results, status) {
-    
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
-        
-        for (var i = 0; i < results.length; i++) {
-            
-            var place = results[i];
-            
-            var id = place.id;
-            var name = place.name;
-            var address = place.formatted_address;
-            var url = place.url;
-            var rating = place.rating;
-            var ranking = Math.floor((Math.random() * 5) + 1);
-            
-            var ourPlace = {};
-            ourPlace.id = id;
-            ourPlace.name = name;
-            ourPlace.address = address;
-            ourPlace.url = url;
-            ourPlace.rating = rating;
-            
-            $.ajax({
-                
-                url: 'js/php/insertPHP.php',
-                type: 'post',
-                data: {'points' : JSON.stringify(ourPlace)},
-                success: function(data) {
-                    
-                }
-            });
-            
-            var leaves = printLeaves(ranking);
-            
-            if (Math.round(place.rating) == 0) {
-            $("#resultz").prepend("<div class = 'panel panel-default'><div class = 'panel-heading'><h3 class = 'panel-title'>" + place.name + "</h3><span class = 'pull-right'>" + leaves + "</div><div class = 'panel-body'>" + place.formatted_address + "<span class = 'pull-right'>" + "<span class = 'glyphicon glyphicon-star'></span>"  + "</span></div></div>");
-            }
-            if (Math.round(place.rating) == 1) {
-            $("#resultz").prepend("<div class = 'panel panel-default'><div class = 'panel-heading'><h3 class = 'panel-title'>" + place.name + "</h3><span class = 'pull-right'>" + leaves + "</span></div><div class = 'panel-body'>" + place.formatted_address + "<span class = 'pull-right'>" + "<span class = 'glyphicon glyphicon-star'></span>"  + "</span></div></div>");
-            }
-            if (Math.round(place.rating) == 2) {
-            $("#resultz").prepend("<div class = 'panel panel-default'><div class = 'panel-heading'><h3 class = 'panel-title'>" + place.name + "</h3><span class = 'pull-right'>" + leaves + "</span></div><div class = 'panel-body'>" + place.formatted_address + "<span class = 'pull-right'>" + "<span class = 'glyphicon glyphicon-star'></span><span class = 'glyphicon glyphicon-star'></span>"  + "</span></div></div>");
-            }
-            if (Math.round(place.rating) == 3) {
-            $("#resultz").prepend("<div class = 'panel panel-default'><div class = 'panel-heading'><h3 class = 'panel-title'>" + place.name + "</h3><span class = 'pull-right'>" + leaves + "</span></div><div class = 'panel-body'>" + place.formatted_address + "<span class = 'pull-right'>" + "<span class = 'glyphicon glyphicon-star'></span><span class = 'glyphicon glyphicon-star'></span><span class = 'glyphicon glyphicon-star'></span>"  + "</span></div></div>");
-            }
-            if (Math.round(place.rating) == 4) {
-            $("#resultz").prepend("<div class = 'panel panel-default'><div class = 'panel-heading'><h3 class = 'panel-title'>" + place.name + "</h3><span class = 'pull-right'>" + leaves + "</span></div><div class = 'panel-body'>" + place.formatted_address + "<span class = 'pull-right'>" + "<span class = 'glyphicon glyphicon-star'></span><span class = 'glyphicon glyphicon-star'></span><span class = 'glyphicon glyphicon-star'></span><span class = 'glyphicon glyphicon-star'></span>"  + "</span></div></div>");
-            }
-            if (Math.round(place.rating) == 5) {
-            $("#resultz").prepend("<div class = 'panel panel-default'><div class = 'panel-heading'><h3 class = 'panel-title'>" + place.name + "</h3><span class = 'pull-right'>" + leaves + "</span></div><div class = 'panel-body'>" + place.formatted_address + "<span class = 'pull-right'>" + "<span class = 'glyphicon glyphicon-star'></span><span class = 'glyphicon glyphicon-star'></span><span class = 'glyphicon glyphicon-star'></span><span class = 'glyphicon glyphicon-star'></span><span class = 'glyphicon glyphicon-star'></span>"  + "</span></div></div>");
-            }
-            
-            
-        }
-        
-    }
-    
-}
 
 $(document).ready(main);
